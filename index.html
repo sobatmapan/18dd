@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="BankData Store: บล็อกพอร์ทัลสไตล์ Blogger 2.0 รวมลิงก์ข้อมูลแบบอ่านเพลิน โหลดเร็ว เหมาะกับ GitHub Pages" />
+  <title>BankData Store | Blogger 2.0 Data Portal</title>
+
+  <!-- Domain baru -->
+  <link rel="canonical" href="https://bankdata.store/" />
+  <meta name="google-site-verification" content="vCKi-MB9iWmbXzsX4G7E-aI-jvOHrdf6uojJT8iLSIs" />
+  <meta name="google-site-verification" content="HBG7SaS-DmFFiYnfI-vT2LOdw3gM2AK3wbmnixc4zR8" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="BankData Store | Blogger 2.0 Data Portal" />
+  <meta property="og:description" content="หน้าเว็บสไตล์บล็อกเกอร์ 2.0: โพสต์หลัก + แถบข้าง + วิดเจ็ต รวมลิงก์ข้อมูลแบบเป็นระเบียบ" />
+  <meta property="og:url" content="https://bankdata.store/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="okey.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="okey.png">
+  <link rel="apple-touch-icon" href="okey.png">
+
+  <meta name="twitter:card" content="summary" />
+
+  <!-- Simple schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Blog",
+    "name":"BankData Store",
+    "url":"https://bankdata.store/",
+    "inLanguage":"th",
+    "description":"บล็อกพอร์ทัลสไตล์ Blogger 2.0 รวมลิงก์ข้อมูลและทรัพยากรแบบอ่านง่าย"
+  }
+  </script>
+
+  <style>
+    :root{
+      /* Blogger 2.0-ish: header banner, content + sidebar, widget look */
+      --bg:#f3f4f6;
+      --paper:#ffffff;
+      --ink:#0f172a;
+      --muted:#556276;
+
+      --line:#d9dee8;
+      --line2:#c7d0df;
+
+      --brand:#2563eb;
+      --brand2:#0ea5e9;
+      --accent:#f59e0b;
+
+      --shadow: 0 12px 26px rgba(15,23,42,.10);
+      --shadow2: 0 6px 14px rgba(15,23,42,.08);
+
+      --radius:14px;
+      --max: 1180px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans Thai", "Helvetica Neue", Arial;
+      color:var(--ink);
+      line-height:1.85;
+      background:
+        radial-gradient(1000px 360px at 15% -10%, rgba(37,99,235,.12), transparent 60%),
+        radial-gradient(1000px 360px at 85% 0%, rgba(14,165,233,.10), transparent 55%),
+        linear-gradient(180deg, #ffffff, var(--bg));
+    }
+
+    a{color:inherit}
+    a:hover{opacity:.92}
+
+    .wrap{width:min(var(--max), calc(100% - 40px)); margin:0 auto;}
+
+    /* a11y */
+    .skip{
+      position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip:focus{
+      position:fixed; left:14px; top:14px;
+      width:auto; height:auto;
+      padding:10px 12px;
+      background:#fff;
+      border:1px solid var(--line2);
+      border-radius:12px;
+      box-shadow:var(--shadow);
+      z-index:9999;
+    }
+
+    /* Blogger-like top bar */
+    .topbar{
+      background:#0b1220;
+      color:#e5e7eb;
+      font-size:13px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+    .topbar .wrap{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 0;
+    }
+    .topbar a{
+      color:#e5e7eb;
+      text-decoration:none;
+      border-bottom:1px dotted rgba(229,231,235,.55);
+    }
+
+    /* Banner header */
+    .banner{
+      padding: 18px 0 16px;
+    }
+    .banner-card{
+      background:
+        radial-gradient(900px 320px at 15% 0%, rgba(37,99,235,.18), transparent 60%),
+        radial-gradient(900px 320px at 85% 0%, rgba(245,158,11,.14), transparent 55%),
+        var(--paper);
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 6px);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 260px;
+    }
+    .avatar{
+      width:54px;height:54px;
+      border-radius: 16px;
+      display:grid; place-items:center;
+      background:
+        linear-gradient(135deg, rgba(37,99,235,.18), rgba(14,165,233,.12));
+      border:1px solid var(--line2);
+      box-shadow: var(--shadow2);
+      font-weight:1000;
+      letter-spacing:.5px;
+      color:#0b2c73;
+    }
+    .title{
+      font-weight:1000;
+      letter-spacing:.2px;
+      line-height:1.1;
+      font-size: 22px;
+    }
+    .tagline{
+      margin-top:4px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* Blogger-like menu under banner */
+    .menubar{
+      margin-top: 10px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+    }
+    .menu{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 12px;
+      flex-wrap:wrap;
+    }
+    .menu a{
+      text-decoration:none;
+      font-size:14px;
+      padding:8px 10px;
+      border:1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      white-space:nowrap;
+    }
+    .menu a.primary{
+      border-color: rgba(37,99,235,.25);
+      background: linear-gradient(180deg, rgba(37,99,235,.10), rgba(255,255,255,.95));
+    }
+
+    /* Main layout: content + sidebar */
+    .layout{
+      display:grid;
+      grid-template-columns: 1.45fr .75fr;
+      gap: 14px;
+      padding: 14px 0 22px;
+      align-items:start;
+    }
+
+    .post, .widget{
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+
+    .post-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      border-bottom: 1px dashed var(--line2);
+      padding-bottom: 12px;
+      margin-bottom: 12px;
+    }
+    .post-head h1{
+      margin:0;
+      font-size: clamp(24px, 2.6vw, 38px);
+      line-height:1.18;
+      letter-spacing:-.35px;
+    }
+    .meta{
+      text-align:right;
+      color:var(--muted);
+      font-size: 12px;
+      white-space:nowrap;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--muted);
+      font-size:13px;
+      box-shadow: var(--shadow2);
+      margin-bottom: 10px;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+      box-shadow: 0 0 0 4px rgba(37,99,235,.10);
+    }
+
+    h2{
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing: -.15px;
+    }
+    h3{
+      margin: 0 0 6px;
+      font-size: 15px;
+      letter-spacing: -.1px;
+    }
+    p{margin:0 0 10px; color: var(--muted)}
+    .post p strong{color:var(--ink)}
+
+    .callout{
+      margin-top: 10px;
+      padding: 12px 14px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(37,99,235,.22);
+      background:
+        radial-gradient(700px 220px at 15% 0%, rgba(37,99,235,.12), transparent 60%),
+        radial-gradient(700px 220px at 85% 0%, rgba(245,158,11,.10), transparent 60%),
+        #fff;
+      box-shadow: var(--shadow2);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(37,99,235,.28);
+      background: linear-gradient(180deg, rgba(37,99,235,.12), rgba(255,255,255,.94));
+      text-decoration:none;
+      font-weight: 900;
+      white-space:nowrap;
+    }
+    .btn:active{transform: translateY(1px)}
+
+    /* Blogger widgets */
+    .widget-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--line2);
+    }
+    .widget-title strong{
+      color: var(--ink);
+      letter-spacing: -.1px;
+    }
+    .widget-title span{
+      color: var(--muted);
+      font-size: 12px;
+      white-space:nowrap;
+    }
+
+    .w-links{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .w-links a{
+      text-decoration:none;
+      padding:10px 12px;
+      border-radius: 12px;
+      border:1px solid var(--line);
+      background:#fff;
+      box-shadow: var(--shadow2);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .w-links a em{
+      font-style:normal;
+      color:var(--muted);
+      font-size:12px;
+      white-space:nowrap;
+    }
+
+    /* Directory list in post (Blogger style: numbered list) */
+    .site-list{
+      margin: 10px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+      columns: 2;
+      column-gap: 22px;
+    }
+    .site-list li{break-inside: avoid; margin: 6px 0}
+    .site-list a{
+      color: var(--ink);
+      text-decoration: underline;
+      text-decoration-color: rgba(37,99,235,.35);
+      text-underline-offset: 3px;
+    }
+    .site-list a:hover{ text-decoration-color: rgba(245,158,11,.35); }
+
+    /* Footer */
+    .footer{
+      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,.70);
+      padding: 18px 0 34px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .9fr;
+      gap: 12px;
+      align-items:start;
+    }
+    .legal{
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .legal a{
+      color: var(--muted);
+      text-decoration: underline;
+      text-decoration-color: rgba(85,98,118,.35);
+      text-underline-offset: 3px;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .layout{grid-template-columns: 1fr}
+      .site-list{columns: 1}
+      .menu{justify-content:flex-start}
+      .topbar .wrap{flex-direction:column; align-items:flex-start}
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#content">ข้ามไปยังเนื้อหา</a>
+
+  <div class="topbar">
+    <div class="wrap">
+      <div>BankData Store — Blogger 2.0 Portal (GitHub-ready)</div>
+      <div>สถานะ: <strong>ออนไลน์</strong> • ปี <span id="yTop"></span></div>
+    </div>
+  </div>
+
+  <header class="banner" role="banner">
+    <div class="wrap">
+      <div class="banner-card">
+        <div class="brand" aria-label="Site identity">
+          <div class="avatar" aria-hidden="true">BD</div>
+          <div>
+            <div class="title">BankData Store</div>
+            <div class="tagline">บล็อกพอร์ทัลรวมลิงก์ • โครงสร้างแบบ Blogger • เรียบแต่ดูดี</div>
+          </div>
+        </div>
+
+        <div style="text-align:right; color:var(--muted); font-size:13px">
+          <div><strong style="color:var(--ink)">โดเมน:</strong> bankdata.store</div>
+          <div>อัปเดตล่าสุด: <span id="dNow"></span></div>
+        </div>
+      </div>
+
+      <!-- Menu (ลิงก์ห้ามหาย/ห้ามเปลี่ยน) -->
+      <div class="menubar" aria-label="Top menu">
+        <nav class="menu">
+          <a class="primary" href="https://pafiairseruk.org/" target="_blank" rel="noopener noreferrer">Data HK</a>
+          <a class="primary" href="https://pafitanglad.org/" target="_blank" rel="noopener noreferrer">Data SDY</a>
+          <a class="primary" href="https://myfilerecovery.net/" target="_blank" rel="noopener noreferrer">Data SGP</a>
+          <a href="https://datahklotto.us/" target="_blank" rel="noopener noreferrer">Data HK Lotto</a>
+          <a href="https://pafiprayabaratdaya.org/" target="_blank" rel="noopener noreferrer">Data SDY Lotto</a>
+          <a href="https://pafiprayatimur.org/" target="_blank" rel="noopener noreferrer">Data SDY Lotto</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="content" class="wrap">
+    <div class="layout">
+      <!-- MAIN POST -->
+      <article class="post" aria-label="Main post">
+        <div class="badge"><span class="dot"></span> โพสต์เด่น (Featured)</div>
+
+        <div class="post-head">
+          <h1>BankData Store: บล็อกพอร์ทัลรวมลิงก์ข้อมูลแบบ Blogger 2.0</h1>
+          <div class="meta">
+            <div>หมวดหมู่: <strong>Directory</strong></div>
+            <div>อ่าน: ~2 นาที</div>
+          </div>
+        </div>
+
+        <p>
+          ถ้าคุณต้องการหน้าเว็บที่ “ดูเหมือนบล็อก” แต่ทำหน้าที่เป็นศูนย์รวมลิงก์ได้ด้วย
+          โครงสร้างแบบ Blogger 2.0 เป็นทางเลือกที่ลงตัว: มีโพสต์หลักให้อ่าน, มีแถบข้างใส่วิดเจ็ต,
+          และยังจัดลิงก์ทั้งหมดให้ค้นหาได้ง่ายในหน้าเดียว
+        </p>
+
+        <p>
+          การใส่ลิงก์ให้ดูเป็นธรรมชาติ ควรแทรกในย่อหน้าที่มีบริบท เช่นการอ้างอิงแหล่งข้อมูลตัวอย่าง
+          <a href="https://lamarsalaplayadegandia.com/" target="_blank" rel="noopener noreferrer">Data HK</a>
+          เพื่อให้ผู้อ่านเข้าใจว่าคลิกไปเพื่ออะไร ไม่ใช่เพียงการวางลิงก์เรียง ๆ
+        </p>
+
+        <h2>หลักการจัดหน้าแบบ Blogger ให้ดูสะอาด</h2>
+        <p>
+          โครงสร้างนี้แบ่งชัดเจน: (1) โพสต์เด่นสำหรับเนื้อหาหลัก (2) วิดเจ็ตด้านข้างสำหรับทางลัด
+          (3) รายการ Directory สำหรับรวมลิงก์ทั้งหมดอย่างเป็นระเบียบ
+        </p>
+
+        <div class="callout" aria-label="Primary CTA">
+          <div>
+            <strong style="color:var(--ink)">ทางออกหลัก (CTA):</strong><br>
+            <span style="color:var(--muted);font-size:14px">คลิกเพื่อไปหน้าปลายทางทันที</span>
+          </div>
+          <!-- ลิงก์ห้ามเปลี่ยน -->
+          <a class="btn" href="http://178.128.215.158/paito-sdy-data-paito-warna-sydney-pools-terbaru/" target="_blank" rel="noopener noreferrer">
+            เปิด Paito SDY
+          </a>
+        </div>
+
+        <h2 style="margin-top:14px">Directory: เว็บไซต์ที่เกี่ยวข้อง</h2>
+        <p>
+          ด้านล่างคือรายการลิงก์ทั้งหมด (คงเดิม 100%) แสดงแบบลิสต์สองคอลัมน์เพื่อเลื่อนอ่านได้เร็ว
+        </p>
+
+        <!-- อย่าลบ/อย่าเปลี่ยนลิงก์ในรายการนี้ -->
+        <ol class="site-list">
+          <li><a href="https://airport-parking-quote.co.uk/" target="_blank" rel="noopener">Airport Parking Quote UK</a></li>
+          <li><a href="https://beyondtrends.store/" target="_blank" rel="noopener">Beyond Trends</a></li>
+          <li><a href="https://cave222.org/" target="_blank" rel="noopener">Cave222</a></li>
+          <li><a href="https://digitalgoodies.store/" target="_blank" rel="noopener">Digital Goodies</a></li>
+          <li><a href="https://elvvaws.org/" target="_blank" rel="noopener">ELVVAWS</a></li>
+          <li><a href="https://expressthoughts.site/" target="_blank" rel="noopener">Express Thoughts</a></li>
+          <li><a href="https://feltribute.xyz/" target="_blank" rel="noopener">Fel Tribute</a></li>
+          <li><a href="https://flakey.info/" target="_blank" rel="noopener">Flakey Notes</a></li>
+          <li><a href="https://football-livescore.co.uk/" target="_blank" rel="noopener">Football LiveScore UK</a></li>
+          <li><a href="https://freeflowingthoughts.site/" target="_blank" rel="noopener">Free Flowing Thoughts</a></li>
+          <li><a href="https://genericlevitra-buy.info/" target="_blank" rel="noopener">Generic Levitra Info</a></li>
+          <li><a href="https://healthyvoices.org/" target="_blank" rel="noopener">Healthy Voices</a></li>
+          <li><a href="https://jobseek.us/" target="_blank" rel="noopener">JobSeek US</a></li>
+          <li><a href="https://juicylucyinfo.co.uk/" target="_blank" rel="noopener">Juicy Lucy Info UK</a></li>
+          <li><a href="https://katanaownersclub.co.uk/" target="_blank" rel="noopener">Katana Owners Club UK</a></li>
+          <li><a href="https://kolkataescortsxx.info/" target="_blank" rel="noopener">Kolkata City Notes</a></li>
+          <li><a href="https://laotzu.store/" target="_blank" rel="noopener">Lao Tzu Store</a></li>
+          <li><a href="https://lifestylepulse.site/" target="_blank" rel="noopener">Lifestyle Pulse</a></li>
+          <li><a href="https://longchampbags.uk/" target="_blank" rel="noopener">Longchamp Bags UK</a></li>
+          <li><a href="https://machynllethgolfclub.co.uk/" target="_blank" rel="noopener">Machynlleth Golf Club</a></li>
+          <li><a href="https://mailstorm.biz/" target="_blank" rel="noopener">MailStorm</a></li>
+          <li><a href="https://masjidmekarindah.id/" target="_blank" rel="noopener">Masjid Mekar Indah</a></li>
+          <li><a href="https://michaels-kors.co.uk/" target="_blank" rel="noopener">Michael&#39;s Kors UK</a></li>
+          <li><a href="https://middlefieldma.us/" target="_blank" rel="noopener">Middlefield MA</a></li>
+          <li><a href="https://musclesteroids.info/" target="_blank" rel="noopener">Muscle Steroids Info</a></li>
+          <li><a href="https://mypet24.co.uk/" target="_blank" rel="noopener">MyPet24 UK</a></li>
+          <li><a href="https://portpatrick-brewery.co.uk/" target="_blank" rel="noopener">Portpatrick Brewery</a></li>
+          <li><a href="https://racingshares.co.uk/" target="_blank" rel="noopener">Racing Shares UK</a></li>
+          <li><a href="https://replicamarket.co.uk/" target="_blank" rel="noopener">Replica Market UK</a></li>
+          <li><a href="https://scriblerian.net/" target="_blank" rel="noopener">Scriblerian University</a></li>
+          <li><a href="https://shanbehzadeh.art/" target="_blank" rel="noopener">Shanbehzadeh Art</a></li>
+          <li><a href="https://seafishnottingham.co.uk/" target="_blank" rel="noopener">Sea Fish Nottingham</a></li>
+          <li><a href="https://smallde.com/" target="_blank" rel="noopener">SmallDE</a></li>
+          <li><a href="https://sobattogel.store/" target="_blank" rel="noopener">Sobat Togel</a></li>
+          <li><a href="https://togelonline.space/" target="_blank" rel="noopener">Togel Online</a></li>
+          <li><a href="https://ubbgloucestershire.org/" target="_blank" rel="noopener">UBB Gloucestershire</a></li>
+          <li><a href="https://unitedforcharitableassistance.org/" target="_blank" rel="noopener">United for Charitable Assistance</a></li>
+          <li><a href="https://webmaster-cs.xyz/" target="_blank" rel="noopener">Webmaster CS</a></li>
+          <li><a href="https://webprediksibola.id/" target="_blank" rel="noopener">Web Prediksi Bola</a></li>
+          <li><a href="https://youth-diplomacy.org/" target="_blank" rel="noopener">Youth Diplomacy</a></li>
+          <li><a href="https://jujutsukaisen.io/" target="_blank" rel="noopener">Anoboy</a></li>
+        </ol>
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside aria-label="Sidebar">
+        <section class="widget">
+          <div class="widget-title">
+            <strong>วิดเจ็ต: ทางลัด</strong>
+            <span>Quick Links</span>
+          </div>
+          <div class="w-links">
+            <!-- คงลิงก์เดิม -->
+            <a href="https://pafiairseruk.org/" target="_blank" rel="noopener noreferrer">Data HK <em>menu</em></a>
+            <a href="https://pafitanglad.org/" target="_blank" rel="noopener noreferrer">Data SDY <em>menu</em></a>
+            <a href="https://myfilerecovery.net/" target="_blank" rel="noopener noreferrer">Data SGP <em>menu</em></a>
+            <a href="https://datahklotto.us/" target="_blank" rel="noopener noreferrer">Data HK Lotto <em>menu</em></a>
+            <a href="https://pafiprayabaratdaya.org/" target="_blank" rel="noopener noreferrer">Data SDY Lotto <em>menu</em></a>
+            <a href="https://pafiprayatimur.org/" target="_blank" rel="noopener noreferrer">Data SDY Lotto <em>menu</em></a>
+          </div>
+        </section>
+
+        <section class="widget">
+          <div class="widget-title">
+            <strong>วิดเจ็ต: ลิงก์เพิ่มเติม</strong>
+            <span>References</span>
+          </div>
+          <div class="w-links">
+            <!-- จาก footer list ที่คุณให้มา (คงลิงก์เดิม) -->
+            <a href="https://pafijatimkabmadiun.org/" target="_blank" rel="noopener">Data HK Lotto <em>ref</em></a>
+            <a href="https://pafiprayatimur.org/" target="_blank" rel="noopener">Data SDY Lotto <em>ref</em></a>
+            <a href="https://pafiairseruk.org/" target="_blank" rel="noopener">Data HK <em>ref</em></a>
+            <a href="https://myfilerecovery.net/" target="_blank" rel="noopener">Data SGP <em>ref</em></a>
+            <a href="https://pafiprayabarat.org/" target="_blank" rel="noopener">Data SDY <em>ref</em></a>
+            <a href="https://lamarsalaplayadegandia.com/" target="_blank" rel="noopener">Data HK <em>ref</em></a>
+            <a href="https://pafiprayabaratdaya.org/" target="_blank" rel="noopener">Data SDY Lotto <em>ref</em></a>
+            <a href="https://wholesalejerseys4sale.com/" target="_blank" rel="noopener">Prediksi Keluaran <em>ref</em></a>
+            <a href="https://pafibenermeriahkabupaten.org/" target="_blank" rel="noopener">Prediksi Jitu <em>ref</em></a>
+            <a href="https://pafisemarapuraklod.org/" target="_blank" rel="noopener">Prediksi SDY <em>ref</em></a>
+            <a href="https://prediksihkpools.net/" target="_blank" rel="noopener">Prediksi HK <em>ref</em></a>
+            <a href="http://178.128.215.158/" target="_blank" rel="noopener">Angkanet <em>ref</em></a>
+            <a href="https://pafiboyolalikota.info/" target="_blank" rel="noopener">Angkanet <em>ref</em></a>
+            <a href="https://pafiblitarkota.info/" target="_blank" rel="noopener">Data HK 6D <em>ref</em></a>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="wrap footer-grid">
+      <div class="legal">
+        <strong style="color:var(--ink)">BankData Store</strong><br>
+        หน้าแนว Blogger 2.0 สำหรับรวมลิงก์และทรัพยากรแบบอ่านง่าย เหมาะกับ GitHub Pages<br>
+        © <span id="y"></span> bankdata.store • <a href="/privacy.html">Privacy Policy</a>
+      </div>
+      <div class="legal" style="text-align:right">
+        อ้างอิงตัวอย่างในบทความ:
+        <a href="https://pafisemarapuraklod.org/" target="_blank" rel="noopener noreferrer">Prediksi SDY</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const now = new Date();
+    const y = now.getFullYear();
+    document.getElementById('y').textContent = y;
+    document.getElementById('yTop').textContent = y;
+
+    // tanggal gaya sederhana (th-TH)
+    const d = now.toLocaleDateString('th-TH', { year:'numeric', month:'long', day:'numeric' });
+    document.getElementById('dNow').textContent = d;
+  </script>
+</body>
+</html>
